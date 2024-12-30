@@ -1,0 +1,10 @@
+bin
+bin/*
+obj
+obj/*
+src
+src/*
+.vscode
+Logs/*
+config.toml
+containerd-2.0.1-windows-amd64.tar.gz

@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ImageForensics.ContainerBuildWindow"
+        Title="Container Build Process"
+        Width="600" Height="400"
+        Background="#2D2D30">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Building Container..."
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="10" />
+
+        <!-- Build Logs -->
+        <ScrollViewer Grid.Row="1" Margin="10">
+            <TextBlock Name="LogOutput" Text="Initializing build..." 
+                       Foreground="White" 
+                       FontSize="14" 
+                       TextWrapping="Wrap" />
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <Button Grid.Row="2" Name="CloseButton" Content="Close" 
+                HorizontalAlignment="Center" 
+                Margin="10" Width="100" Click="OnCloseButtonClick" />
+    </Grid>
+</Window>

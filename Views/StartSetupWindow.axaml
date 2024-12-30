@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="ImageForensics.StartSetupWindow"
+        Title="Setup"
+        Width="600" Height="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Status Section -->
+        <StackPanel Grid.Row="0" Margin="10" Spacing="5">
+            <TextBlock Name="StatusText" 
+                       Text="Setup Status"
+                       FontSize="16" 
+                       FontWeight="Bold" 
+                       Foreground="DarkBlue" />
+        </StackPanel>
+
+        <!-- Progress Bar -->
+        <StackPanel Grid.Row="1" Margin="10" Spacing="5">
+            <TextBlock Text="Progress"
+                       FontSize="16" 
+                       FontWeight="Bold" 
+                       Foreground="DarkGreen" />
+            <ProgressBar Name="ProgressBar"
+                         Height="20" 
+                         IsIndeterminate="False" />
+        </StackPanel>
+
+        <!-- Log Viewer -->
+        <Border Grid.Row="2" 
+                Margin="10" 
+                BorderBrush="Gray" 
+                BorderThickness="1" 
+                CornerRadius="5" 
+                Background="Black">
+            <Grid>
+                <ScrollViewer Name="LogScrollViewer" 
+                              VerticalScrollBarVisibility="Auto" 
+                              HorizontalScrollBarVisibility="Disabled">
+                    <TextBlock Name="LogText" 
+                               TextWrapping="Wrap" 
+                               Padding="5" 
+                               FontSize="12" 
+                               Foreground="White" />
+                </ScrollViewer>
+
+                <!-- Loading Overlay -->
+                <Grid Name="LoadingCanvas"
+                      IsVisible="False" 
+                      ZIndex="10"
+                      Background="#80000000" 
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                    <Image Name="LoadingImage"
+                           Source="avares://ImageForensics/Assets/Images/loading_container.png"
+                           Stretch="Fill"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
